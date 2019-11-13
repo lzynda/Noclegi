@@ -1,0 +1,10 @@
+﻿@using Noclegi.Helpers
+@inject SignInManager<ApplicationUser> SignInManager
+@if (SignInManager.IsSignedIn(User) && User.IsInRole(RoleHelper.Administrator))
+{
+    <ul class="nav navbar-nav">
+        <li><a asp-area="" asp-controller="Role" asp-action="Index">Roles</a></li>
+        <li><a asp-area="" asp-controller="districts" asp-action="Index">Districts</a></li>
+        <li><a asp-area="" asp-controller="categories" asp-action="Index">Categories</a></li>
+    </ul>
+}
